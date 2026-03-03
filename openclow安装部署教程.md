@@ -2,13 +2,24 @@
 
 ## 一、官方参考资料
 
-### 🌐 官方网站
+### 🌐 OpenClaw官方网站
 
 | 名称 | 地址 | 说明 |
 |------|------|------|
 | **OpenClaw 官网** | https://openclaw.ai | 官方网站 |
 | **OpenClaw 文档** | https://docs.openclaw.ai | 官方文档（中文） |
-| **ClawHub 技能市场** | https://clawhub.com | Skills 技能库 |
+| **ClawHub 技能市场** | https://clawhub.com | Skills 技能库 ，搜了下clawhub也是一堆A货，大家认准这个网站|
+| **GitHub 仓库** | https://github.com/openclaw/openclaw | 源代码 |
+| **Discord 社区** | https://discord.com/invite/clawd | 社区交流 |
+
+
+### 🌐 其他官方网站
+
+| 名称 | 地址 | 说明 |
+|------|------|------|
+| **OpenClaw 官网** | https://openclaw.ai | 官方网站 |
+| **OpenClaw 文档** | https://docs.openclaw.ai | 官方文档（中文） |
+| **ClawHub 技能市场** | https://clawhub.com | Skills 技能库 ，百度直接搜clawhub也会冒出一堆A货，大家认准这个网址|
 | **GitHub 仓库** | https://github.com/openclaw/openclaw | 源代码 |
 | **Discord 社区** | https://discord.com/invite/clawd | 社区交流 |
 
@@ -30,11 +41,9 @@
 
 | 分类 | 方式 | 难度 | 适合人群 |
 |------|------|------|----------|
-| 🐣 **纯小白** | EasyClaw UI 版 | ⭐ | 不想懂技术，只想用起来 |
-| 🐥 **小白** | 安装器脚本 + Mac mini | ⭐ | 有 Mac 电脑，想本地运行 |
-| 🐤 **进阶** | npm/pnpm 全局安装 | ⭐⭐ | 有点技术基础 |
-| 🦅 **老手** | Docker / 云平台一键部署 | ⭐⭐⭐ | 想服务器托管/24h运行 |
-| 🛠️ **开发者** | 源代码安装 | ⭐⭐⭐ | 开发者/贡献者 |
+| 🐣 **纯小白** | EasyClaw UI 版 | ⭐ | 不想懂技术，只想用起来，但傅盛大佬展示的扩展功能也是要花时间处理的，买了龙虾养龙虾也是重服务模式 |
+| 🐤 **适中主推** | | 云服务厂商推的一键安装⭐⭐ | 先用起来比较推荐这个模式，没那么复杂，扩展性依赖厂商自己的迭代 |
+| 🐥 **扩展好** | 开源官方安装 + 服务器 | ⭐⭐⭐ | 只要愿意看官方文档，小白勇猛点也一样可以，扩展性高 |
 
 ---
 
@@ -60,13 +69,11 @@ npm start
 
 ---
 
-## 四、🦅 服务器部署：腾讯云
+## 四、🦅 云服务厂商
 
-### 为什么选腾讯云？
-- 国内访问速度快
-- 支付方便（微信/QQ/支付宝）
-- 服务器稳定
-- 有学生/个人优惠
+### 为什么选云服务厂商？
+- 集成服务一键部署更方便
+- 推广有优惠
 
 ### 腾讯云服务器安装步骤
 
