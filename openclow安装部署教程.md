@@ -1,6 +1,30 @@
 # OpenClaw 安装部署教程
 
-## 一、部署方式总览
+## 一、官方参考资料
+
+### 🌐 官方网站
+
+| 名称 | 地址 | 说明 |
+|------|------|------|
+| **OpenClaw 官网** | https://openclaw.ai | 官方网站 |
+| **OpenClaw 文档** | https://docs.openclaw.ai | 官方文档（中文） |
+| **ClawHub 技能市场** | https://clawhub.com | Skills 技能库 |
+| **GitHub 仓库** | https://github.com/openclaw/openclaw | 源代码 |
+| **Discord 社区** | https://discord.com/invite/clawd | 社区交流 |
+
+---
+
+### 📚 官方文档目录
+
+- **安装指南**: https://docs.openclaw.ai/zh-CN/install
+- **配置参考**: https://docs.openclaw.ai/zh-CN/gateway/configuration
+- **消息渠道**: https://docs.openclaw.ai/zh-CN/channels/index
+- **工具 Skill**: https://docs.openclaw.ai/zh-CN/tools/skills
+- **API 参考**: https://docs.openclaw.ai/zh-CN/reference/rpc
+
+---
+
+## 二、部署方式总览
 
 ### 按小白友好程度分类
 
@@ -14,7 +38,7 @@
 
 ---
 
-## 二、🐣 最简单：EasyClaw（推荐小白）
+## 三、🐣 最简单：EasyClaw（推荐小白）
 
 > EasyClaw 是基于 OpenClaw 的简单模式 UI 层，通过自然语言规则交互，无需配置 skills 或 workflows。
 
@@ -36,28 +60,72 @@ npm start
 
 ---
 
-## 三、🐥 小白友好：Mac mini 本地安装
+## 四、🦅 服务器部署：腾讯云
 
-### 方式一：安装器脚本（最简单）
+### 为什么选腾讯云？
+- 国内访问速度快
+- 支付方便（微信/QQ/支付宝）
+- 服务器稳定
+- 有学生/个人优惠
+
+### 腾讯云服务器安装步骤
+
+#### 1. 购买服务器
+- 访问 https://cloud.tencent.com
+- 选择轻量应用服务器（Lighthouse）或 CVM
+- 推荐配置：2核4G / 4核8G
+- 系统选择：Ubuntu 22.04 或 CentOS 8
+
+#### 2. 连接服务器
+```bash
+# Mac 打开终端
+ssh root@你的服务器IP
+
+# Windows 使用 Putty 或 Xshell
+```
+
+#### 3. 安装 Docker（推荐）
 
 ```bash
-# Mac 打开终端，运行：
+# Ubuntu/Debian
+apt update && apt install -y docker.io docker-compose
+systemctl start docker
+systemctl enable docker
+
+# CentOS
+yum install -y docker
+systemctl start docker
+systemctl enable docker
+```
+
+#### 4. 部署 OpenClaw
+
+```bash
+# 方式一：Docker 部署
+docker pull openclaw/openclaw
+
+docker run -d \
+  --name openclaw \
+  -v ~/.openclaw:/home/node/.openclaw \
+  -p 8080:8080 \
+  -e OPENCLAW_API_KEY=your_api_key \
+  openclaw/openclaw
+
+# 方式二：安装器脚本
 curl -fsSL https://openclaw.ai/install.sh | bash
 ```
 
-然后按提示操作即可。
-
-### 方式二：Mac mini + 树莓派组合
-- Mac mini 作为主力处理
-- 树莓派作为消息入口（可选）
+#### 5. 配置域名（可选）
+- 腾讯云 DNS 解析
+- 配置 HTTPS 证书
 
 ---
 
-## 四、🦅 老手之选：云平台一键部署
+## 五、云平台一键部署
 
 ### 1. Fly.io（推荐）
 
-免费额度充足，全球分布，一键部署：
+免费额度充足，全球分布：
 
 ```bash
 # 安装 flyctl
@@ -68,31 +136,25 @@ fly launch
 fly deploy
 ```
 
-详细教程：[https://docs.openclaw.ai/zh-CN/install/fly](https://docs.openclaw.ai/zh-CN/install/fly)
+**一键部署：** https://fly.io/launch/github/openclaw/openclaw
 
 ### 2. Railway
 
 ```bash
-# 通过 GitHub 授权一键部署
 # 1. 访问 https://railway.app
 # 2. New Project → Deploy from GitHub repo
 # 3. 选择 openclaw 仓库
 ```
 
+**一键部署：** https://railway.app/new?template=https://github.com/openclaw/openclaw
+
 ### 3. Render
 
-免费 tier 可用，详见：[https://docs.openclaw.ai/zh-CN/install/render](https://docs.openclaw.ai/zh-CN/install/render)
-
-### 4. 一键部署链接
-
-| 平台 | 一键部署 |
-|------|----------|
-| Fly.io | [Deploy](https://fly.io/launch/github/openclaw/openclaw) |
-| Railway | [Deploy](https://railway.app/new?template=https://github.com/openclaw/openclaw) |
+详细教程：https://docs.openclaw.ai/zh-CN/install/render
 
 ---
 
-## 五、🛠️ 进阶：本地手动安装
+## 六、本地安装（Mac/PC）
 
 ### 1. 安装器脚本
 
@@ -103,7 +165,7 @@ curl -fsSL https://openclaw.ai/install.sh | bash
 # Windows (PowerShell)
 iwr -useb https://openclaw.ai/install.ps1 | iex
 
-# 然后初始化
+# 初始化
 openclaw onboard --install-daemon
 ```
 
@@ -115,33 +177,13 @@ npm install -g openclaw@latest
 
 # pnpm
 pnpm add -g openclaw@latest
-pnpm approve-builds -g  # 批准构建脚本
+pnpm approve-builds -g
 pnpm add -g openclaw@latest
-
-# 初始化
-openclaw onboard --install-daemon
-```
-
-**遇到 sharp 构建问题？**
-```bash
-SHARP_IGNORE_GLOBAL_LIBVIPS=1 npm install -g openclaw@latest
-```
-
-### 3. Docker 部署
-
-```bash
-docker pull openclaw/openclaw
-
-docker run -d \
-  --name openclaw \
-  -v ~/.openclaw:/home/node/.openclaw \
-  -p 8080:8080 \
-  openclaw/openclaw
 ```
 
 ---
 
-## 六、🛠️ 开发者：从源代码安装
+## 七、🛠️ 开发者：源代码安装
 
 ```bash
 git clone https://github.com/openclaw/openclaw.git
@@ -150,22 +192,6 @@ pnpm install
 pnpm build
 openclaw onboard --install-daemon
 ```
-
----
-
-## 七、VPS 远程托管
-
-适用于需要 24/7 运行、不依赖本地电脑的场景。
-
-### 支持的平台：
-- **Fly.io** - 免费额度，全球访问
-- **Railway** - 按需付费
-- **Render** - 免费 tier
-- **Hetzner** - 欧洲 VPS，性价比高
-- **GCP** - Google Cloud
-- **DigitalOcean** - VPS
-
-详细教程：[https://docs.openclaw.ai/zh-CN/vps](https://docs.openclaw.ai/zh-CN/vps)
 
 ---
 
@@ -197,11 +223,12 @@ openclaw dashboard
 
 ## 十、推荐选择
 
-| 你是谁 | 推荐方案 |
-|--------|----------|
+| 场景 | 推荐方案 |
+|------|----------|
 | 🎯 不想懂技术 | **EasyClaw** |
+| 🖥️ 国内服务器 | **腾讯云 + Docker** |
 | 🖥️ 有 Mac 想本地用 | **安装器脚本** |
-| 🌍 想 24/7 运行 | **Fly.io 一键部署** |
+| 🌍 想 24/7 运行 | **腾讯云 / Fly.io** |
 | 💻 开发者 | **源代码安装** |
 
 ---
@@ -210,21 +237,21 @@ openclaw dashboard
 
 **Q: 找不到 openclaw 命令？**
 ```bash
-# 添加到 PATH (~/.zshrc)
+# 添加到 PATH
 export PATH="$(npm prefix -g)/bin:$PATH"
 source ~/.zshrc
 ```
+
+**Q: 国内服务器访问慢？**
+- 使用国内镜像源
+- 腾讯云 COS 存储
 
 **Q: 如何更新？**
 ```bash
 openclaw update
 ```
 
-**Q: 如何卸载？**
-```bash
-openclaw uninstall
-```
-
 ---
 
-> 📖 更多文档：[OpenClaw 官方安装文档](https://docs.openclaw.ai/zh-CN/install)
+> 📖 更多文档：[OpenClaw 官方文档](https://docs.openclaw.ai/zh-CN)
+> 🎯 技能市场：[ClawHub](https://clawhub.com)
