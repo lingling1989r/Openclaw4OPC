@@ -37,8 +37,8 @@ OpenClaw本身是个开源的项目，是免费的，但部署使用龙虾是有
 
 我只付费过下面两个：
 
-- **MiniMax** ：https://platform.minimaxi.com/subscribe/coding-plan?code=7VkLpV71yy&source=link
-- **顶尖大模型集成平台（GPT5/ClaudeCode/Gemini等都有）** ：https://www.univibe.cc/console/auth?type=register&invite=BVWMUO
+- **MiniMax** ：[MiniMax](https://platform.minimaxi.com/subscribe/coding-plan?code=7VkLpV71yy&source=link)
+- **顶尖大模型集成平台（GPT5/ClaudeCode/Gemini等都有）** ：[Univibe](https://www.univibe.cc/console/auth?type=register&invite=BVWMUO)
 
 集成平台有免费额度可以先用，我是手头有开发任务，之前买的MAX套餐，现在也能用在龙虾上，开心！
 
@@ -67,20 +67,64 @@ OpenClaw本身是个开源的项目，是免费的，但部署使用龙虾是有
 ---
 
 
-## 三、🦅 云服务厂商
+## 三、🦅 云服务厂商部署方式
 
 ### 为什么选云服务厂商？
 - 集成服务一键部署更方便
-- 推广有优惠
+- 推广期间有合作优惠，比如CodeBudy和腾讯云合作，[合作链接](https://www.codebuddy.cn/promotion/?ref=xlyyxroz0690sla) 
 
 ### 云服务器安装步骤 （给自己预留好时间，看文档做部署）
 
 #### 1. 购买服务器 
+<img width="936" height="474" alt="image" src="https://github.com/user-attachments/assets/60bdac71-d2c0-4f29-9f71-7c91f9e21391" />
+
 - 访问腾讯云的龙虾部署教程 https://cloud.tencent.com/developer/article/2624973
 - 教程中会让你采购服务器，新手如果看到99/年的套餐就直接下手，很便宜了。
+- 薅羊毛，codeBUdy不是重点，只是用来薅羊毛获取免费服务器 [腾讯云羊毛](https://www.codebuddy.cn/promotion/?ref=xlyyxroz0690sla)
 
-#### 2. 参考各大云服务厂商的OpenClaw一键安装或者自行安装（能自行装更推荐）
-- 跟着教程走/各大厂商也有合作活动，比如腾讯的CodeBudy会更便宜，不过1个月那种其实是不够的。。
+  第一步：按照指示安装完codeBudy
+<img width="991" height="687" alt="image" src="https://github.com/user-attachments/assets/fcae83b9-c990-4b63-adc2-e93462856bae" />
+
+
+ 第二步：领取福利
+ <img width="899" height="508" alt="image" src="https://github.com/user-attachments/assets/c430888b-1c65-40f9-ad78-d36033976e1f" />
+
+ 第三步：买服务器
+ <img width="899" height="508" alt="image" src="https://github.com/user-attachments/assets/9bbd81bf-6aaf-4c0a-be6c-c5cace6a5aa3" />
+
+
+#### 2. 参考各大云服务厂商的OpenClaw一键安装或者自行安装（能自行装更推荐，腾讯云为例）
+- 购买完成后，跟着教程走就对了。
+
+第一步：进入控制台找到买的服务器
+  https://console.cloud.tencent.com/lighthouse/instance/index?rid=4
+<img width="885" height="445" alt="image" src="https://github.com/user-attachments/assets/655d1845-0971-444d-811b-f7e995fcb9b1" />
+
+第二步：装OpenClaw（用云服务厂商的安装，重装系统选择OpenClaw）
+
+<img width="885" height="565" alt="image" src="https://github.com/user-attachments/assets/8e9064bc-5b99-4db1-b267-39aa52febe20" />
+
+
+<img width="932" height="392" alt="image" src="https://github.com/user-attachments/assets/a85a99ec-4a31-4065-b363-351aabf1375b" />
+
+#### 3. 配置OpenClaw （三件套：模型配置 && 通道配置 技能配置）
+点击顶部应用管理，配置模型，进入需要花钱的地方
+
+<img width="922" height="349" alt="image" src="https://github.com/user-attachments/assets/30105d0a-1ca0-43ab-9799-11e71668a43e" />
+
+
+#### 4. 模型配置 （半小时）
+尽量用好点的模型，下面任意选一个先注册后，拿到API TOKEN。
+- **MiniMax** ：[MiniMax](https://platform.minimaxi.com/subscribe/coding-plan?code=7VkLpV71yy&source=link)
+- **顶尖大模型集成平台（GPT5/ClaudeCode/Gemini等都有）** ：[Univibe](https://www.univibe.cc/console/auth?type=register&invite=BVWMUO)
+
+
+Univibe带了OpenClow安装教程：https://www.univibe.cc/console/docs/openclaw
+
+**核心两步走**：第一步：拿到key；第二步：配置好url ；第三步：他家有微信交流群，有问题找客服
+<img width="2232" height="1380" alt="image" src="https://github.com/user-attachments/assets/1288e8de-1a62-4df3-8e56-6ef67c8cc1f9" />
+
+
 
 ---
 
