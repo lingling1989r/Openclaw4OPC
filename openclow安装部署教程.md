@@ -215,6 +215,7 @@ openclaw update
 ```
 
 ---
-
+> OpenClaw养虾：[README](https://github.com/lingling1989r/Openclaw4OPC/blob/main/README.md)
 > 📖 更多文档：[OpenClaw 官方文档](https://docs.openclaw.ai/zh-CN)
 > 🎯 技能市场：[ClawHub](https://clawhub.com)
+
