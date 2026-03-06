@@ -30,7 +30,7 @@ OpenClaw本身是个开源的项目，是免费的，但部署使用龙虾是有
 | 名称 | 地址 | 说明 |
 |------|------|------|
 | **腾讯云OpenClaw入口** | [腾讯云 ](https://cloud.tencent.com/act/pro/lighthouse-moltbot?from=29437&Is=home)|腾讯云龙虾安装入口|
-| **阿里云OpenClaw入口** | [阿里云]https://www.aliyun.com/benefit/scene/moltbot?spm=5176.42028462.J_E6lQbksm_Obit3Bf0Tx1p.d_primary.2ea5154a97uqIc&scm=20140722.M_10976299.P_177.MO_5556-ID_10963004-MID_10963004-CID_37520-ST_15696-PA_se@1022753309-V_1 | 阿里云龙虾安装入口 |
+| **阿里云OpenClaw入口** | [阿里云 ](https://www.aliyun.com/benefit/scene/moltbot?spm=5176.42028462.J_E6lQbksm_Obit3Bf0Tx1p.d_primary.2ea5154a97uqIc&scm=20140722.M_10976299.P_177.MO_5556-ID_10963004-MID_10963004-CID_37520-ST_15696-PA_se@1022753309-V_1) | 阿里云龙虾安装入口 |
 
 
 ### 🌐 Token流量费 （收费，费用看个人情况）
