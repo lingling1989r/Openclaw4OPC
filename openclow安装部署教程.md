@@ -37,8 +37,8 @@ OpenClaw本身是个开源的项目，是免费的，但部署使用龙虾是有
 
 我只付费过下面两个：
 
-** MiniMax ** ：https://platform.minimaxi.com/subscribe/coding-plan?code=7VkLpV71yy&source=link
-** 顶尖大模型集成平台（GPT5/ClaudeCode/Gemini） ** ：https://www.univibe.cc/console/auth?type=register&invite=BVWMUO
+**MiniMax** ：https://platform.minimaxi.com/subscribe/coding-plan?code=7VkLpV71yy&source=link
+**顶尖大模型集成平台（GPT5/ClaudeCode/Gemini等都有）** ：https://www.univibe.cc/console/auth?type=register&invite=BVWMUO
 
 集成平台有免费额度可以先用，我是手头有开发任务，之前买的MAX套餐，现在也能用在龙虾上，开心！
 
