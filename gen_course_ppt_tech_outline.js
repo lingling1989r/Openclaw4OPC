@@ -134,7 +134,7 @@ function parseHeadings(md) {
   const lines = md.split(/\r?\n/);
   const headings = [];
   for (const line of lines) {
-    const m = line.match(/^(#{2,4})\s+(.*)$/);
+    const m = line.match(/^(#{1,4})\s+(.*)$/);
     if (!m) continue;
     headings.push({ level: m[1].length, text: m[2].trim() });
   }
@@ -317,11 +317,14 @@ pptx.title = '龙虾框架分享（科技风提纲版）';
 // 4) Outline Level 1-4
 {
   // Convert headings into bullet text with indent levels
-  const items = headings.map(h => {
-    const lvl = h.level - 2; // 0..2
-    const prefix = h.level === 2 ? 'L1 ' : h.level === 3 ? 'L2 ' : 'L3 ';
-    return { lvl, text: prefix + h.text };
-  });
+  // Level mapping: #=L1, ##=L2, ###=L3, ####=L4
+  const items = headings
+    .filter(h => h.level >= 1 && h.level <= 4)
+    .map(h => {
+      const lvl = Math.max(0, h.level - 1); // 0..3
+      const prefix = h.level === 1 ? 'L1 ' : h.level === 2 ? 'L2 ' : h.level === 3 ? 'L3 ' : 'L4 ';
+      return { lvl, text: prefix + h.text };
+    });
 
   const maxLines = 18;
   const pages = chunkByCount(items, maxLines);
